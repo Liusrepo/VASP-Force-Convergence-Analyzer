@@ -204,7 +204,7 @@ class VASPForceAnalyzer:
                         try:
                             x, y, z = float(parts[0]), float(parts[1]), float(parts[2])
                             fx, fy, fz = float(parts[3]), float(parts[4]), float(parts[5])
-                            mag = math.hypot(fx, fy, fz)
+                            mag = (fx**2 + fy**2 + fz**2) ** 0.5
                             forces.append({'position': (x,y,z), 'force': (fx,fy,fz), 'magnitude': mag})
                         except ValueError:
                             continue
